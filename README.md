@@ -35,16 +35,6 @@ Golang, Docker, PostgreSQL을 활용한 은행
 
     - 해당 이미지의 로그를 확인 가능하다.
 
-# DB Setting
-
-1. docker exec -it <containerId> /bin/sh로 접속
-    - 해당 container환경에서 cli를 활용하는 방법
-    - /bin/sh같은 경우에는 우분투 환경이기 떄문에
-
-2. createdb --username=<name> --owner=<owner> <DBName>
-
-==> 해당 내용의 요약본이 makeFile
-
 
 # go library
 
@@ -52,4 +42,5 @@ Golang, Docker, PostgreSQL을 활용한 은행
 - DB schema migrate
 - `migrate create -ext sql -dir db/migration -seq init_schema`
 
-
+2. brew install kyleconroy/sqlc/sqlc
+- DB Connect library
