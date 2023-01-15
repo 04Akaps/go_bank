@@ -1,19 +1,31 @@
+# DB Schema
+
+- https://dbdiagram.io/d/63ad40e57d39e42284e80351
+
 # go module
 
 1. github.com/gin-gonic/gin
-
-- API Server
+   API Server
 
 2. github.com/lib/pq
-
-- PostgreSQL Connect Library
+   PostgreSQL Connect Library
 
 3. github.com/spf13/viper
+   Load Config & environment
 
-- Load Config & environment
+4. github.com/golang/mock/mockgen@v1.6.0
+   Test Module
+   사용하지 않음 -> 구조가 복잡하다 생각하여 후에 사용할 예정
+   이런게 있구나 정도??
 
-4.
-5.
+5. github.com/google/uuid
+   UUID를 위한 패키지
+
+6. github.com/dgrijalva/jwt-go
+   JWT Token
+
+7. github.com/o1egl/paseto
+   JWT 대신 간단하고 더 안정적으로 사용 가능한 Token
 
 # Tools
 

@@ -6,10 +6,10 @@ import (
 	"fmt"
 )
 
+// type Store interface {}
+
 // 이곳에서는 Transaction의 ACID를 지키기 위한 항목들이 정리되어 있습니다.
 // 예를들어 A가 B에게 송금을 하게 된다면, 최소 두개의 Tx가 발생을 하여야 하고 둘중 하나라도 실패하면 모두 실패해야 합니다.
-
-
 type Store struct {
 	*Queries
 	db *sql.DB
