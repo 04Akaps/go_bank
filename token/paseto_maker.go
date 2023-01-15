@@ -8,7 +8,6 @@ import (
 	"github.com/o1egl/paseto"
 )
 
-
 type PasetoMaker struct {
 	paseto *paseto.V2
 	key []byte
@@ -28,17 +27,21 @@ func NewPasetoMaker(key string) (Maker, error) {
 	return maker, nil
 }
 
+// make new auth Token
 func (maker *PasetoMaker)CreateToken(username string, duration time.Duration) (string ,error){
 	payload, err:= NewPayload(username, duration) 
 
 	if err != nil {
 		return "", err
 	}
-
+	// 1. paseto salt
+	// 2. token data
+	// 3. paseto footer == salt
 	return maker.paseto.Encrypt(maker.key, payload, nil)
 }
 
-func (maker *PasetoMaker)	VerifyToken(token string ) (*Payload, error){
+// verify auth Token
+func (maker *PasetoMaker)VerifyToken(token string ) (*Payload, error){
 	payload := &Payload{}
 
 	err := maker.paseto.Decrypt(token, maker.key, payload, nil)
@@ -49,7 +52,7 @@ func (maker *PasetoMaker)	VerifyToken(token string ) (*Payload, error){
 
 	err = payload.Valid()
 	if err != nil {
-		return nil, err
+		return nil, ErrExpiredToken
 	}
 
 	return payload, nil
