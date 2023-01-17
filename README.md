@@ -1,3 +1,7 @@
+# Purpose
+
+최초 사용 repo 사용 목적과는 다르게 다양한 module을 사용해보는 repo로 목적을 변경
+
 # DB Schema
 
 - https://dbdiagram.io/d/63ad40e57d39e42284e80351

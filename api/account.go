@@ -53,6 +53,7 @@ func (server *Server) getAccount(ctx *gin.Context) {
 	account, err := server.store.GetAccount(ctx, req.ID)
 	if err != nil {
 		if err == sql.ErrNoRows {
+			// DB에 없다면
 			ctx.JSON(http.StatusNotFound, errorResponse(err))
 			return
 		}
